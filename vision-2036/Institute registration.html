@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institutional Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1{
+      margin-left: 550px;
+      align-items: center;
+      justify-content: center;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .checkbox-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .checkbox-container label {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Institutional Registration Form</h1>
+
+<form id="institutionForm">
+  <!-- Institution Details -->
+  <label for="instituteName">Name of Institute:</label>
+  <input type="text" id="instituteName" name="instituteName" required>
+
+  <label for="contactPerson">Name of Contact Person:</label>
+  <input type="text" id="contactPerson" name="contactPerson" required>
+
+  <label for="mobile">Mobile Number:</label>
+  <input type="tel" id="mobile" name="mobile" required>
+
+  <label for="email">Email ID:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="estYear">Establishment Year:</label>
+  <input type="number" id="estYear" name="estYear" placeholder="YYYY" required>
+
+  <label for="uniqueID">Unique Institution ID:</label>
+  <input type="text" id="uniqueID" name="uniqueID" value="INST-XXXXXX" readonly>
+
+  <label for="location">Google Location:</label>
+  <input type="text" id="location" name="location" placeholder="Automatically fetched location" readonly>
+  <button type="button" onclick="fetchLocation()">Fetch Location</button>
+
+  <!-- Address Details -->
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" required>
+
+  <label for="pincode">PIN Code:</label>
+  <input type="text" id="pincode" name="pincode" required>
+
+  <label for="playgroundSize">Size of Playground (in square meters):</label>
+  <input type="number" id="playgroundSize" name="playgroundSize" placeholder="Enter size in m²" required>
+
+  <!-- Sports Details -->
+  <label for="sports">Available Sports:</label>
+  <div class="checkbox-container">
+    <label><input type="checkbox" name="sports" value="Cricket"> Cricket</label>
+    <label><input type="checkbox" name="sports" value="Badminton"> Badminton</label>
+    <label><input type="checkbox" name="sports" value="Kabaddi"> Kabaddi</label>
+    <label><input type="checkbox" name="sports" value="Kho Kho"> Kho Kho</label>
+    <label><input type="checkbox" name="sports" value="Weightlifting"> Weightlifting</label>
+    <label><input type="checkbox" name="sports" value="Chess"> Chess</label>
+    <label><input type="checkbox" name="sports" value="Football"> Football</label>
+    <label><input type="checkbox" name="sports" value="Volleyball"> Volleyball</label>
+    <label><input type="checkbox" name="sports" value="Table Tennis"> Table Tennis</label>
+    <label><input type="checkbox" name="sports" value="Tennis"> Tennis</label>
+    <label><input type="checkbox" name="sports" value="Cycling"> Cycling</label>
+    <label><input type="checkbox" name="sports" value="Athletics"> Athletics</label>
+    <label><input type="checkbox" name="sports" value="Swimming"> Swimming</label>
+    <label><input type="checkbox" name="sports" value="Boxing"> Boxing</label>
+    <label><input type="checkbox" name="sports" value="Archery"> Archery</label>
+    <label><input type="checkbox" name="sports" value="Hockey"> Hockey</label>
+    <label><input type="checkbox" name="sports" value="Basketball"> Basketball</label>
+    <label><input type="checkbox" name="sports" value="Traditional Games"> Traditional Games</label>
+    <label><input type="checkbox" name="sports" value="Other"> Other</label>
+  </div>
+
+  <label for="otherSport">If Other, Please Specify:</label>
+  <input type="text" id="otherSport" name="otherSport" placeholder="Enter other sports">
+
+  <label for="sportsFaculty">Sports Faculty:</label>
+  <textarea id="sportsFaculty" name="sportsFaculty" placeholder="Enter names and roles of sports faculty" required></textarea>
+
+  <label for="physicalDirector">Physical Director Name:</label>
+  <input type="text" id="physicalDirector" name="physicalDirector" required>
+
+  <label for="groundPhotos">Ground Photos:</label>
+  <input type="file" id="groundPhotos" name="groundPhotos" accept="image/*" multiple required>
+
+  <label for="prevResults">Previous Results in Games:</label>
+  <textarea id="prevResults" name="prevResults" placeholder="List previous achievements and results in games"></textarea>
+
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  // Fetch Google Location
+  function fetchLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        document.getElementById('location').value = Lat: ${latitude}, Long: ${longitude};
+      }, () => {
+        alert('Unable to fetch location. Please try again.');
+      });
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
+  }
+</script>
+
+</body>
+</html>

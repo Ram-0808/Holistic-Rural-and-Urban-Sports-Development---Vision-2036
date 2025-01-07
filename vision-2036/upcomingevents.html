@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Sports Events - AP Sports Development</title>
+    <style>
+        /* Reusing existing styles from dashboard */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        header .logos {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logos img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header .title-container {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        nav {
+            background: #4caf50;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #81c784;
+        }
+
+        /* Events specific styles */
+        .events-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-info {
+            flex: 1;
+        }
+
+        .event-title {
+            color: #388e3c;
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+        }
+
+        .event-details {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .event-date {
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        footer {
+            background: linear-gradient(to right, #4caf50, #388e3c);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        .filter-section {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .filter-button {
+            background: #4caf50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-button:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <a href="https://andhra-pradesh.gov">
+                <img src="https://i.ibb.co/8Nj0yXd/png-clipart-government-of-andhra-pradesh-logo.png" alt="Government of Andhra Pradesh Logo">
+            </a>
+            <a href="https://s3sports.in">
+                <img src="https://i.ibb.co/C5Gnvfd/S3-logo-new.jpg" alt="S3 Sports Logo">
+            </a>
+        </div>
+        <div class="title-container">
+            <h1>Upcoming Sports Events</h1>
+            <p>Sports Tournaments and Championships in India</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Player performance tracking form.html">Performance tracking</a></li>
+            <li><a href="./resources.html">Resources</a></li>
+            <li><a href="./Sports information.html">Information Hub</a></li>
+            <li><a href="#events" class="active">Upcoming Events</a></li>
+        </ul>
+    </nav>
+
+    <div class="events-container">
+        <div class="filter-section">
+            <button class="filter-button">All Sports</button>
+            <button class="filter-button">Cricket</button>
+            <button class="filter-button">Football</button>
+            <button class="filter-button">Badminton</button>
+            <button class="filter-button">Athletics</button>
+        </div>
+
+        <div class="event-card">
+            <div class="event-info">
+                <h3 class="event-title">National Athletics Championships 2025</h3>
+                <p class="event-details"><strong>Venue:</strong> Jawaharlal Nehru Stadium, New Delhi</p>
+                <p class="event-details"><strong>Category:</strong> Athletics</p>
+                <p class="event-details"><strong>Registration Deadline:</strong> January 25, 2025</p>
+            </div>
+            <div class="event-date">
+                <div>FEB</div>
+                <div>15-20</div>
+                <div>2025</div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-info">
+                <h3 class="event-title">Indian Premier League 2025</h3>
+                <p class="event-details"><strong>Venue:</strong> Multiple Venues Across India</p>
+                <p class="event-details"><strong>Category:</strong> Cricket</p>
+                <p class="event-details"><strong>Tournament Duration:</strong> 2 months</p>
+            </div>
+            <div class="event-date">
+                <div>MAR</div>
+                <div>23</div>
+                <div>2025</div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-info">
+                <h3 class="event-title">India Open Badminton Championship</h3>
+                <p class="event-details"><strong>Venue:</strong> K.D. Jadhav Indoor Hall, New Delhi</p>
+                <p class="event-details"><strong>Category:</strong> Badminton</p>
+                <p class="event-details"><strong>Registration Deadline:</strong> February 28, 2025</p>
+            </div>
+            <div class="event-date">
+                <div>APR</div>
+                <div>5-10</div>
+                <div>2025</div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-info">
+                <h3 class="event-title">National Football League</h3>
+                <p class="event-details"><strong>Venue:</strong> Various Stadiums Across India</p>
+                <p class="event-details"><strong>Category:</strong> Football</p>
+                <p class="event-details"><strong>Registration Deadline:</strong> March 15, 2025</p>
+            </div>
+            <div class="event-date">
+                <div>APR</div>
+                <div>20</div>
+                <div>2025</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Andhra Pradesh Sports Development. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

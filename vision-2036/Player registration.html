@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1{
+      margin-left: 550px;
+      align-items: center;
+      justify-content: center;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, button, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #webcam {
+      display: none;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Player Registration Form</h1>
+
+<form id="registrationForm">
+  <!-- Personal Information -->
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="guardian">Father’s/Guardian’s Name:</label>
+  <input type="text" id="guardian" name="guardian" required>
+
+  <label for="mobile">Mobile Number:</label>
+  <input type="tel" id="mobile" name="mobile" required>
+
+  <label for="email">Email ID:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob" required>
+
+  <label for="uniqueID">Unique Player ID:</label>
+  <input type="text" id="uniqueID" name="uniqueID" value="ID-XXXXXX" readonly>
+
+  <!-- Address Details -->
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" required>
+
+  <label for="pincode">PIN Code:</label>
+  <input type="text" id="pincode" name="pincode" required>
+
+  <!-- Education Details -->
+  <label for="school">School/College Name:</label>
+  <input type="text" id="school" name="school" required>
+
+  <label for="idCard">School/College ID Card:</label>
+  <input type="file" id="idCard" name="idCard" accept="image/*,application/pdf" required>
+
+  <!-- Sports Details -->
+  <label for="sport">Sport:</label>
+  <select id="sport" name="sport" required>
+    <option value="">Select a sport</option>
+    <option value="cricket">Cricket</option>
+    <option value="badminton">Badminton</option>
+    <option value="kabaddi">Kabaddi</option>
+    <option value="kho_kho">Kho Kho</option>
+    <option value="weightlifting">Weightlifting</option>
+    <option value="chess">Chess</option>
+    <option value="football">Football</option>
+    <option value="volleyball">Volleyball</option>
+    <option value="table_tennis">Table Tennis</option>
+    <option value="tennis">Tennis</option>
+    <option value="cycling">Cycling</option>
+    <option value="athletics">Athletics</option>
+    <option value="swimming">Swimming</option>
+    <option value="boxing">Boxing</option>
+    <option value="archery">Archery</option>
+    <option value="hockey">Hockey</option>
+    <option value="basketball">Basketball</option>
+    <option value="traditional_games">Other</option>
+  </select>
+
+  <label for="experience">Experience Level:</label>
+  <select id="experience" name="experience" required>
+    <option value="new">New</option>
+    <option value="basic">Basic</option>
+    <option value="advanced">Advanced</option>
+    <option value="professional">Professional</option>
+  </select>
+
+  <label for="academy">Academy Name (if any):</label>
+  <input type="text" id="academy" name="academy">
+
+  <label for="coach">Coach Name:</label>
+  <input type="text" id="coach" name="coach">
+
+  <!-- Image Upload -->
+  <label for="playerPhoto">Player Photo:</label>
+  <input type="file" id="playerPhoto" name="playerPhoto" accept="image/*" required>
+
+  <label>Take a Picture:</label>
+  <button type="button" onclick="showWebcam()">Open Webcam</button>
+  <div id="webcam">
+    <video id="video" autoplay></video>
+    <button type="button" onclick="capturePhoto()">Capture Photo</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <img id="photo" alt="Captured Photo" style="margin-top: 10px; display: block;">
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  // Webcam Integration
+  function showWebcam() {
+    const webcam = document.getElementById('webcam');
+    const video = document.getElementById('video');
+    webcam.style.display = 'block';
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        alert('Unable to access webcam: ' + err);
+      });
+  }
+
+  function capturePhoto() {
+    const canvas = document.getElementById('canvas');
+    const video = document.getElementById('video');
+    const photo = document.getElementById('photo');
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    photo.src = canvas.toDataURL('image/png');
+    photo.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

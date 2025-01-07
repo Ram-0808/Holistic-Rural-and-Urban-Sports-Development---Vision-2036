@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AP Sports Development</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        select {
+            background-color: white;
+            cursor: pointer;
+        }
+
+        button {
+            background: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background: #388e3c;
+        }
+
+        .form-toggle {
+            margin-bottom: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer {
+            background: linear-gradient(to right, #4caf50, #388e3c);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AP Sports Development Login</h1>
+    </header>
+
+    <div class="login-container">
+        <div class="form-group form-toggle">
+            <label for="userType">Select User Type</label>
+            <select id="userType" onchange="toggleForms()">
+                <option value="">Select user type</option>
+                <option value="player">Player</option>
+                <option value="institution">Institution</option>
+            </select>
+        </div>
+
+        <!-- Player Login Form -->
+        <form id="playerForm" class="hidden">
+            <h2>Player Login</h2>
+            <div class="form-group">
+                <label for="playerUsername">Player ID</label>
+                <input type="text" id="playerUsername" name="playerUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="playerPassword">Password</label>
+                <input type="password" id="playerPassword" name="playerPassword" required>
+            </div>
+            <button type="submit">Login as Player</button>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <div class="register-link">
+                <p>New Player? <a href="./Player registration.html">Register here</a></p>
+            </div>
+        </form>
+
+        <!-- Institution Login Form -->
+        <form id="institutionForm" class="hidden">
+            <h2>Institution Login</h2>
+            <div class="form-group">
+                <label for="institutionUsername">Institution ID</label>
+                <input type="text" id="institutionUsername" name="institutionUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="institutionPassword">Password</label>
+                <input type="password" id="institutionPassword" name="institutionPassword" required>
+            </div>
+            <button type="submit">Login as Institution</button>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <div class="register-link">
+                <p>New Institution? <a href="./Institute registration.html">Register here</a></p>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Andhra Pradesh Sports Development. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleForms() {
+            const userType = document.getElementById('userType').value;
+            const playerForm = document.getElementById('playerForm');
+            const institutionForm = document.getElementById('institutionForm');
+
+            if (userType === 'player') {
+                playerForm.classList.remove('hidden');
+                institutionForm.classList.add('hidden');
+            } else if (userType === 'institution') {
+                institutionForm.classList.remove('hidden');
+                playerForm.classList.add('hidden');
+            } else {
+                playerForm.classList.add('hidden');
+                institutionForm.classList.add('hidden');
+            }
+        }
+
+        // Form submission handlers
+        document.getElementById('playerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add player login logic here
+            console.log('Player login attempted');
+        });
+
+        document.getElementById('institutionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add institution login logic here
+            console.log('Institution login attempted');
+        });
+    </script>
+</body>
+</html>

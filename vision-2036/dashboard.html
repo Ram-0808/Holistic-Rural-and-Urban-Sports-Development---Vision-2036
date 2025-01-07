@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Development in Andhra Pradesh - Vision 2036</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        p{
+          padding-top: 10px;
+          margin-right: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #4caf50, #81c784);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        header .logos {
+            display: flex;
+            align-items: center;
+        }
+        header .logos img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        header .title-container {
+            text-align: center;
+            flex-grow: 1;
+        }
+        header .title-container h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        header .title-container p {
+            margin: 0;
+            font-size: 16px;
+        }
+        header .dropdown {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        header .dropdown button {
+            background-color:green;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        header .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+        }
+        header .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        header .dropdown-content a {
+            text-decoration: none;
+            color:green;
+            padding: 10px;
+            display: block;
+        }
+        header .dropdown-content a:hover {
+            background-color: #e8f5e9;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: black;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #81c784;
+        }
+
+        /* Main Content */
+        main {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        main h1 {
+            font-size: 32px;
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+        main .map-container img {
+            max-width: 600px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Graph Section */
+        .graphs {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .chart-container {
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #4caf50, #388e3c);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        /* Login Link */
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .login-link a {
+            text-decoration: none;
+            color: #0078d7;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        .AP-logo{
+          margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+      <div class="logos">
+      <a href="https://andhra-pradesh.gov">
+        <img src="https://i.ibb.co/8Nj0yXd/png-clipart-government-of-andhra-pradesh-logo.png" alt="Government of Andhra Pradesh Logo">
+        </a>
+            <a href="https://s3sports.in">
+                <img src="https://i.ibb.co/C5Gnvfd/S3-logo-new.jpg" alt="S3 Sports Logo">
+            </a>
+        </div>
+        <div class="title-container">
+            <h1>Sports Development in Andhra Pradesh</h1>
+            <p>Holistic Rural and Urban Sports Development - Vision 2036</p>
+        </div>
+        <div class="dropdown">
+            <button>Registration</button>
+            <div class="dropdown-content">
+                <a href="./Player registration.html">Player Registration</a>
+                <a href="./Institute registration.html">Institute Registration</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Player performance tracking form.html">Performance tracking</a></li>
+            <li><a href="./resources.html">Resources</a></li>
+            <li><a href="./Sports information.html">Information Hub</a></li>
+            <li><a href="./upcomingevents.html">Upcoming Events</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to Andhra Pradesh Sports Development Portal</h1>
+        <div class="map-container">
+            <img src="https://i.ibb.co/68wG4DZ/Map-of-Andhra-pradesh.png" alt="Map of Andhra Pradesh">
+        </div>
+
+        <!-- Graph Section -->
+        <div class="graphs">
+            <div class="chart-container">
+                <canvas id="radialBarChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="hexagonalBinningChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="histogramChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Login Link -->
+        <div class="login-link">
+            <p>Already have an account? <a href="./login.html">Login here</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Andhra Pradesh Sports Development. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Radial Bar Chart
+        const radialBarChart = new Chart(document.getElementById('radialBarChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Players', 'Institutes', 'Sports'],
+                datasets: [{
+                    data: [300, 50, 20],
+                    backgroundColor: ['#4caf50', '#ffeb3b', '#2196f3']
+                }]
+            }
+        });
+
+        // Hexagonal Binning Chart
+        const hexagonalBinningChart = new Chart(document.getElementById('hexagonalBinningChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Region A', 'Region B', 'Region C', 'Region D'],
+                datasets: [{
+                    label: 'Player Count',
+                    data: [120, 150, 90, 180],
+                    backgroundColor: '#4caf50'
+                }]
+            }
+        });
+
+        // Histogram Chart
+        const histogramChart = new Chart(document.getElementById('histogramChart'), {
+            type: 'line',
+            data: {
+                labels: ['10-15', '16-20', '21-25', '26+'],
+                datasets: [{
+                    label: 'Age Distribution',
+                    data: [50, 70, 40, 20],
+                    borderColor: '#388e3c',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

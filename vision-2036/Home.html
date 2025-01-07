@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Development Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color:#388e3c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #0078d7;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+        }
+        section h2 {
+            color: #0078d7;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #0078d7;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .cta-button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Sports Development Portal</h1>
+        <p>Empowering Rural and Urban Athletes for Vision 2036</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./Player registration.html">Players</a>
+        <a href="./Institute registration.html">Institutes</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#community">Community</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Dashboard -->
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Track player statistics, institute data, and overall sports development progress. Explore insights through interactive charts and performance metrics.</p>
+            <a href="#analytics" class="cta-button">View Analytics</a>
+        </section>
+
+        <!-- Players Section -->
+        <section id="players">
+            <h2>Players</h2>
+            <p>Access a database of registered players, including their progress, achievements, and training schedules. Filter by location, sport, or performance level.</p>
+            <a href="#playerRegistration" class="cta-button">Register New Player</a>
+        </section>
+
+        <!-- Institutes Section -->
+        <section id="institutes">
+            <h2>Institutes</h2>
+            <p>Explore registered institutes offering training and facilities for various sports. View details about their sports programs and achievements.</p>
+            <a href="#instituteRegistration" class="cta-button">Register Institute</a>
+        </section>
+
+        <!-- Tournaments Section -->
+        <section id="tournaments">
+            <h2>Upcoming Tournaments</h2>
+            <p>Stay updated with state, national, and international tournaments. View schedules, venues, and registration details.</p>
+            <a href="#tournamentRegistration" class="cta-button">Add Tournament</a>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics">
+            <h2>Interactive Analytics</h2>
+            <p>Visualize sports data through bar graphs, pie charts, and heatmaps. Gain insights into player performance and talent density across regions.</p>
+            <a href="#visuals" class="cta-button">Explore Analytics</a>
+        </section>
+
+        <!-- Community Engagement -->
+        <section id="community">
+            <h2>Community Engagement</h2>
+            <p>Foster collaboration among players, coaches, and institutes. Launch grassroots programs, raise funds, and provide mentorship to aspiring athletes.</p>
+            <a href="#mentorship" class="cta-button">Join Community</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Sports Development Portal. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

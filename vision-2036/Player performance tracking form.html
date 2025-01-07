@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Performance Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #388e3c;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Player Performance Tracking</h1>
+        <form action="/submit-performance" method="post">
+            <!-- Basic Player Information -->
+            <div class="form-group">
+                <label for="playerName">Player Name</label>
+                <input type="text" id="playerName" name="playerName" placeholder="Enter player name" required>
+            </div>
+            <div class="form-group">
+                <label for="playerID">Unique Player ID</label>
+                <input type="text" id="playerID" name="playerID" placeholder="Enter player ID" required>
+            </div>
+            <div class="form-group">
+                <label for="sport">Sport</label>
+                <select id="sport" name="sport" required>
+                    <option value="" disabled selected>Select sport</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Table Tennis">Table Tennis</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Football">Football</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="instituteName">Institute Name</label>
+                <input type="text" id="instituteName" name="instituteName" placeholder="Enter institute name">
+            </div>
+            <div class="form-group">
+                <label for="coachName">Coach Name</label>
+                <input type="text" id="coachName" name="coachName" placeholder="Enter coach name">
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="form-group">
+                <label for="skillsAssessed">Skills Assessed</label>
+                <textarea id="skillsAssessed" name="skillsAssessed" rows="3" placeholder="List key skills assessed"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="performanceScore">Performance Score (Out of 100)</label>
+                <input type="number" id="performanceScore" name="performanceScore" placeholder="Enter performance score" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="achievements">Achievements</label>
+                <textarea id="achievements" name="achievements" rows="3" placeholder="List recent achievements"></textarea>
+            </div>
+
+            <!-- Training Information -->
+            <div class="form-group">
+                <label for="trainingHours">Training Hours Completed</label>
+                <input type="number" id="trainingHours" name="trainingHours" placeholder="Enter total training hours" required>
+            </div>
+            <div class="form-group">
+                <label for="trainingFocus">Training Focus Areas</label>
+                <textarea id="trainingFocus" name="trainingFocus" rows="3" placeholder="Mention focus areas during training"></textarea>
+            </div>
+
+            <!-- Challenges and Improvements -->
+            <div class="form-group">
+                <label for="challenges">Challenges Faced</label>
+                <textarea id="challenges" name="challenges" rows="3" placeholder="List challenges faced"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="improvementAreas">Improvement Areas</label>
+                <textarea id="improvementAreas" name="improvementAreas" rows="3" placeholder="Mention areas for improvement"></textarea>
+            </div>
+
+            <!-- Health and Fitness -->
+            <div class="form-group">
+                <label for="healthIssues">Injuries/Health Issues</label>
+                <textarea id="healthIssues" name="healthIssues" rows="3" placeholder="Mention injuries or health concerns"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="fitnessScore">Fitness Score (Out of 10)</label>
+                <input type="number" id="fitnessScore" name="fitnessScore" placeholder="Enter fitness score" min="0" max="10">
+            </div>
+
+            <!-- Feedback and Recommendations -->
+            <div class="form-group">
+                <label for="coachComments">Coach Comments</label>
+                <textarea id="coachComments" name="coachComments" rows="3" placeholder="Enter coach's feedback"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recommendations">Recommendations</label>
+                <textarea id="recommendations" name="recommendations" rows="3" placeholder="Enter recommendations"></textarea>
+            </div>
+
+            <!-- Reporting Period -->
+            <div class="form-group">
+                <label for="reportingPeriod">Reporting Month</label>
+                <input type="month" id="reportingPeriod" name="reportingPeriod" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Performance Report</button>
+        </form>
+    </div>
+</body>
+</html>

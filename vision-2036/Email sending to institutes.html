@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sending with AI Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0078d7;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group select, .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Sending Portal</h1>
+        <form id="emailForm">
+            <!-- Institute Location -->
+            <div class="form-group">
+                <label for="location">Select Location</label>
+                <select id="location" name="location" required>
+                    <option value="" disabled selected>Select a location</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Amaravati">Amaravati</option>
+                </select>
+            </div>
+
+            <!-- Available Sports -->
+            <div class="form-group">
+                <label for="sports">Select Sport</label>
+                <select id="sports" name="sports" required>
+                    <option value="" disabled selected>Select a sport</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Table Tennis">Table Tennis</option>
+                </select>
+            </div>
+
+            <!-- Email Subject -->
+            <div class="form-group">
+                <label for="subject">Email Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter email subject" required>
+            </div>
+
+            <!-- Email Body -->
+            <div class="form-group">
+                <label for="body">Email Body</label>
+                <textarea id="body" name="body" rows="4" placeholder="Enter email body" required></textarea>
+            </div>
+
+            <!-- Attachment -->
+            <div class="form-group">
+                <label for="attachment">Attach File</label>
+                <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx">
+            </div>
+
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById("emailForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+
+            // Send data to backend
+            try {
+                const response = await fetch("http://localhost:5000/send-email", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert("Email sent successfully!");
+                } else {
+                    alert("Failed to send email: " + result.error);
+                }
+            } catch (error) {
+                alert("An error occurred while sending the email.");
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
